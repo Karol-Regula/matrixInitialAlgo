@@ -34,6 +34,18 @@ Returns:
 turns m in to an identity matrix
 */
 void ident(struct matrix *m) {
+  int row = 0;
+  int col = 0;
+  int curr = 0;
+  printf("itentiating matrix...\n");
+  for (row = 0; row < m->rows; row++){
+    for (col = 0; col < m->cols; col++){
+      if (col == curr){
+        m->m[row][col] = 1;
+      }
+    }
+    curr++;
+  }
 }
 
 
@@ -45,6 +57,14 @@ Returns:
 multiply each element of m by x
 */
 void scalar_mult(double x, struct matrix *m) {
+  int row = 0;
+  int col = 0;
+  printf("scalar multiplying matrix...\n");
+  for (row = 0; row < m->rows; row++){
+    for (col = 0; col < m->cols; col++){
+      m->m[row][col] *= x;
+    }
+  }
 }
 
 

@@ -14,8 +14,9 @@ int main() {
 
   edges = new_matrix(4, 4);
   print_matrix(edges);
-
-  edges = new_matrix(4, 5);
+  ident(edges);
+  print_matrix(edges);
+  scalar_mult(5, edges);
   print_matrix(edges);
 
   free_matrix(edges);
