@@ -42,6 +42,8 @@ void ident(struct matrix *m) {
     for (col = 0; col < m->cols; col++){
       if (col == curr){
         m->m[row][col] = 1;
+      }else{
+        m->m[row][col] = 0;
       }
     }
     curr++;
@@ -76,6 +78,7 @@ Returns:
 a*b -> b
 */
 void matrix_mult(struct matrix *a, struct matrix *b) {
+
 }
 
 
