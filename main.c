@@ -13,6 +13,11 @@ int main() {
   struct matrix *edges;
   struct matrix *points;
 
+  color c;
+  c.red = 0;
+  c.green = 0;
+  c.blue = 255;
+
   edges = new_matrix(4, 4);
   print_matrix(edges);
   ident(edges);
@@ -30,6 +35,11 @@ int main() {
   add_point(points, 2, 3, 4);
   add_point(points, 5, 6, 8);
   print_matrix(points);
+  add_edge(points, 100, 100, 1, 200, 200, 2);
+  add_edge(points, 400, 100, 1, 400, 200, 2);
+  print_matrix(points);
+  draw_lines(points, s, c);
+  display(s);
 
   free_matrix(edges);
   free_matrix(points);
