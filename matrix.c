@@ -78,7 +78,25 @@ Returns:
 a*b -> b
 */
 void matrix_mult(struct matrix *a, struct matrix *b) {
+  // 4x4 X 4xN
+  //each point is a summation of 4 multiplications
+  int bcols = b->cols;
+  struct matrix *temp;
+  temp = new_matrix(4, bcols);
+  copy_matrix(b,temp);
 
+  int i = 0;
+  int k = 0;
+  for (i = 0; i < 4; i++){
+    //printf("i: %d\n", i);
+    for (k = 0; k < temp->cols; k++){
+      //printf("k: %d\n", k);
+      b->m[i][k] = (a->m[i][0] * temp->m[0][k]) +
+                   (a->m[i][1] * temp->m[1][k]) +
+                   (a->m[i][2] * temp->m[2][k]) +
+                   (a->m[i][3] * temp->m[3][k]);
+    }
+  }
 }
 
 

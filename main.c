@@ -26,7 +26,7 @@ int main() {
   print_matrix(edges);
 
   edges->lastcol = 3;
-  add_point(edges, 2, 3, 4);
+  //add_point(edges, 2, 3, 4);
   print_matrix(edges);
 
   points = new_matrix(4, 0);
@@ -40,6 +40,11 @@ int main() {
   print_matrix(points);
   draw_lines(points, s, c);
   display(s);
+
+  printf("Matrix multiplication:\n");
+  matrix_mult(edges, points);
+  print_matrix(edges);
+  print_matrix(points);
 
   free_matrix(edges);
   free_matrix(points);
