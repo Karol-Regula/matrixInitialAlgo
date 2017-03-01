@@ -14,6 +14,7 @@ int main() {
   struct matrix *points;
   struct matrix *a;
   struct matrix *b;
+  struct matrix *d;
 
   color c;
   c.red = 0;
@@ -74,12 +75,33 @@ int main() {
   printf("Matrix b after multiplying:\n");
   print_matrix(b);
 
+  d = new_matrix(4, 0);
+  int x = -100;
+  int y = -100;
+  for (int x = -100; x <= 100; x += 10){
+    add_edge(d, 100 + x, 100 + y, 0, 400 + x, 400 + y, 0);
+    add_edge(d, 400 + x, 400 + y, 0, 100 + x, 400 + y, 0);
+    add_edge(d, 100 + x, 400 + y, 0, 400 + x, 100 + y, 0);
+    add_edge(d, 400 + x, 100 + y, 0, 100 + x, 100 + y, 0);
+    y += 10;
+  }
+  y = 100;
+  for (int x = -100; x <= 100; x += 10){
+    add_edge(d, 100 + x, 100 + y, 0, 400 + x, 400 + y, 0);
+    add_edge(d, 400 + x, 400 + y, 0, 100 + x, 400 + y, 0);
+    add_edge(d, 100 + x, 400 + y, 0, 400 + x, 100 + y, 0);
+    add_edge(d, 400 + x, 100 + y, 0, 100 + x, 100 + y, 0);
+    y += -10;
+  }
 
-  draw_lines(points, s, c);
+  draw_lines(d, s, c);
   display(s);
 
   free_matrix(edges);
   free_matrix(points);
+  free_matrix(a);
+  free_matrix(b);
+  free_matrix(d);
 }
 /*
 ident
