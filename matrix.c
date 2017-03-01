@@ -16,7 +16,7 @@ void print_matrix(struct matrix *m) {
   //if (m->lastcol)...
   int row = 0;
   int col = 0;
-  printf("printing matrix...\n");
+  //printf("printing matrix...\n");
   for (row = 0; row < m->rows; row++){
     printf("| ");
     for (col = 0; col < m->cols; col++){
@@ -37,7 +37,7 @@ void ident(struct matrix *m) {
   int row = 0;
   int col = 0;
   int curr = 0;
-  printf("itentiating matrix...\n");
+  printf("identiating matrix...\n");
   for (row = 0; row < m->rows; row++){
     for (col = 0; col < m->cols; col++){
       if (col == curr){
